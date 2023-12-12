@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Edit Blogs{% endblock %}
+{% block style %}
+<style>
+    .box{
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: orange;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: black;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 box">
+    <h3>{{contact.title}}</h3>
+    <p>Posted on : {{contact.date}}</p>
+    <h5>Name : {{contact.username}}</h5>
+    <h5>Email : {{contact.email}}</h5>
+    <p>{{contact.message}}</p>
+    <form action="/contactrequests/{{id}}" method="post">
+        <input type="submit" class="btn btn-danger" name="submit_button" value="Delete">
+        <input type="submit" class="btn btn-success" name="submit_button" value="Responded">
+    </form>
+  </div>
+{% endblock %}

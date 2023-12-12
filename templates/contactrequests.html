@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block title %}Contact Requests{% endblock %}
+{% block contactrequestsactive %}active{% endblock %}
+{% block style %}
+<style>
+    .box{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color: aquamarine;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: black;
+    }
+    .donebox{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 20px;
+        background-color:chartreuse;
+        border: 2px solid black;
+        border-radius: 15px;
+        color: black;
+    }
+</style>
+{% endblock %}
+{% block body %}
+{% with successes = get_flashed_messages(category_filter=["success"]) %}
+    {% if successes %}
+      {% for msg in successes %}
+        <div class="alert alert-success alert-dismissible fade show m-auto" style="max-width: 600px;" role="alert">
+          <strong>{{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<h2 class="m-4"> • All Contact Requests</h2>
+<div class="container-fluid px-4">
+  <h3>New Pending Requests :</h3>
+  <div class="row">
+    {% for contact in allcontacts %}
+      {% if not contact.responded %}
+        <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 box">
+          <h3>{{contact.title}}</h3>
+          <p>Posted on : {{contact.date}}</p>
+          <h5>Name : {{contact.username}}</h5>
+          <h5>Email : {{contact.email}}</h5>
+          <p>{{contact.message}}</p>
+          <a href="/contactrequests/{{contact.id}}"><button class="btn btn-warning">Edit</button></a>
+        </div>
+      {% endif %}
+    {% endfor %}
+    </div>
+    <h3>Responded Requests :</h3>
+    <div class="row">
+    {% for contact in allcontacts %}
+      {% if contact.responded %}
+        <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 donebox">
+          <h3>{{contact.title}}</h3>
+          <p>Posted on : {{contact.date}}</p>
+          <h5>Name : {{contact.username}}</h5>
+          <h5>Email : {{contact.email}}</h5>
+          <p>{{contact.message}}</p>
+          <a href="/contactrequests/{{contact.id}}"><button class="btn btn-warning">Edit</button></a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+</div>
+{% endblock %}

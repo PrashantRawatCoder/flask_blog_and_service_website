@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% block contactactive %}active{% endblock %}
+{% block style %}
+<style>
+  @media screen and (max-width: 900px) {
+
+
+    .home-about-1 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .home-about-2 {
+      float: left;
+      clear: left;
+      color: white;
+    }
+
+    .home-img-logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid color(srgb 0 0 100);
+    }
+  }
+
+  @media screen and (min-width: 901px) {
+    .imgbg {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 15px;
+      color: black;
+      background-size: cover;
+    }
+
+    .home-about-1 {
+      float: left;
+      width: 25%;
+    }
+
+    .home-about-2 {
+      float: right;
+      color: white;
+      width: 75%;
+    }
+
+    .home-img-logo {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid color(srgb 0 0 100);
+    }
+  }
+
+  .mainpage {
+    width: 100%;
+    padding: 2%;
+    display: block;
+  }
+</style>
+{% endblock %}
+{% block body %}
+
+<div class="p-2" id="home-about">
+  <div class="home-about-1">
+    <img class="home-img-logo" src="{{url_for('static', filename='images/logo.jpg')}}" alt="logo">
+  </div>
+  <div class="home-about-2 p-3">
+    <p>Hi , I am Prashant Rawat. I am a student. I am interested in Programming, Hacking, buissnis etc . Lorem ipsum,
+      dolor sit amet consectetur adipisicing elit. Quo, corrupti officia reprehenderit iste quisquam eius numquam sit
+      asperiores quaerat animi nisi incidunt quia debitis repudiandae sint. Molestiae ex sint vero?</p>
+  </div>
+</div>
+<div class="mainpage">
+  <p class="mx-2">Hope you like my website !</p>
+  <h2>My Past</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi, magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis, eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem! Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a, quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
+  <br>
+  <h2>Experiance</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi, magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis, eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem! Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a, quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
+  <br>
+  <h2>What will I do in future ?</h2>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi, magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis, eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem! Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a, quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
+  
+</div>
+{% endblock %}

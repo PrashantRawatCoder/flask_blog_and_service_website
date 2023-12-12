@@ -1,0 +1,257 @@
+{% extends "layout.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block style %}
+{% block head %}
+{% endblock %}
+<style>
+  #home-about:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  @media screen and (max-width: 900px) {
+
+    #home-about {
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      width: auto;
+    }
+
+    .home-about-1 {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .home-about-2 {
+      float: left;
+      clear: left;
+      color: white;
+    }
+
+    .home-img-logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 50%;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid color(srgb 0 0 100);
+    }
+
+    .imgbg {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 15px;
+      color: black;
+    }
+
+    .blogpd {
+      margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 901px) {
+    .blogpd {
+      margin: 0;
+    }
+
+    .imgbg {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      padding: 20px;
+      border: 2px solid black;
+      border-radius: 15px;
+      color: black;
+      background-size: cover;
+    }
+
+    #home-about {
+      width: 100%;
+      height: auto;
+      display: flex;
+    }
+
+    .home-about-1 {
+      float: left;
+      width: 25%;
+    }
+
+    .home-about-2 {
+      float: right;
+      color: white;
+      width: 75%;
+    }
+
+    .home-img-logo {
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      border: 2px solid color(srgb 0 0 100);
+    }
+  }
+
+  .welcontainer {
+    display: grid;
+    place-items: center;
+  }
+
+  .typed {
+    color: orangered;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid;
+    width: 0;
+    animation: typing 1.5s steps(30, end) forwards, blinking 1s infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0
+    }
+
+    to {
+      width: 345px
+    }
+  }
+
+  @keyframes blinking {
+    0% {
+      border-color: transparent
+    }
+
+    50% {
+      border-color: black
+    }
+
+    100% {
+      border-color: transparent
+    }
+  }
+
+</style>
+{% endblock %}
+{% block homeactive %}active{% endblock %}
+
+{% block body %}
+<div class="d-flex align-items-center m-0 p-0 justify-content-center"">
+  {% with successes = get_flashed_messages(category_filter=["success"]) %}
+    {% if successes %}
+      {% for msg in successes %}
+        <div class="alert alert-success alert-dismissible fade show" style="max-width: 600px;" role="alert">
+          <strong>{{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+      {% for msg in errors %}
+        <div class="alert alert-danger alert-dismissible fade show" style="max-width: 600px;" role="alert">
+          <strong>{{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+<div class="my-4 welcontainer">
+  <h1>Welcome to </h1>
+  <h1 class=" typed">PrashantRawatCoder</h1>
+</div>
+
+<div class="p-2" id="home-about">
+  <div class="home-about-1">
+    <img class="home-img-logo" src="{{url_for('static', filename='images/logo.jpg')}}" alt="logo">
+  </div>
+  <div class="home-about-2 p-3">
+    <p>Hi , I am Prashant Rawat. I am a student. I am interested in Programming, Hacking, buissnis etc . Lorem ipsum,
+      dolor sit amet consectetur adipisicing elit. Quo, corrupti officia reprehenderit iste quisquam eius numquam sit
+      asperiores quaerat animi nisi incidunt quia debitis repudiandae sint. Molestiae ex sint vero?</p>
+  </div>
+</div>
+<div class="text-center">
+  <a class="btn btn-primary" href="/aboutme">Know More</a>
+</div>
+<hr>
+<h1 class="m-4 homewel">Services</h1>
+
+
+
+<h2 class="m-4"> • Freelancing</h2>
+<div class="container-fluid px-4">
+  <div class="row">
+    {% for service in services['freelancing'] %}
+      <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
+        style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
+        <h4>{{service['title']}}</h4>
+        <p>{{service['about']}}</p>
+        <div class="text-center">
+          <a class="btn btn-dark" href="{{service['link']}}">Know More</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+
+<h2 class="m-4"> • Teaching</h2>
+<div class="container-fluid px-4">
+  <div class="row">
+    {% for service in services['teaching'] %}
+      <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
+        style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
+        <h4>{{service['title']}}</h4>
+        <p>{{service['about']}}</p>
+        <div class="text-center">
+          <a class="btn btn-dark" href="{{service['link']}}">Know More</a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+<div class="container-fluid blogpd">
+  <h1>Blogs</h1>
+  <div class="row mx-3 imgbg " style="background-image: url({{url_for('static', filename='images/blogbg.jpg')}});">
+
+    <div class="col-sm-11 col-md-11 col-lg-11 col-xl-5">
+      <h1>Latest Blogs</h1>
+      <table class="table table-dark table-hover">
+        <tbody>
+          {% for blog in allblogs %}
+            <tr>
+                <td>{{blog.title}}</td>
+                <td><a href="/blogs/{{blog.slug}}">
+                <button class="btn btn-warning" >Visit</button></a>
+                </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

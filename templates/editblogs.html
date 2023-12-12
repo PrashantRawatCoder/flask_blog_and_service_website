@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block title %}Edit Blogs{% endblock %}
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+{% block editblogsactive %}active{% endblock %}
+{% block body %}
+<div class="m-4">
+  {% with errors = get_flashed_messages(category_filter=["error"]) %}
+    {% if errors %}
+      {% for msg in errors %}
+        <div class="alert alert-danger alert-dismissible fade show" style="max-width: 600px;" role="alert">
+          <strong>{{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<div class="d-flex align-items-center m-0 p-0 justify-content-center"">
+  
+  {% with successes = get_flashed_messages(category_filter=["success"]) %}
+    {% if successes %}
+      {% for msg in successes %}
+        <div class="alert alert-success alert-dismissible fade show" style="max-width: 600px;" role="alert">
+          <strong>{{ msg }}</strong>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+  <h1>Basic Actions</h1>
+  <div class="m-4">
+
+    <h3>Upload a New blog :</h3>
+    <a href="/editblogs/0"><button class="btn btn-warning" >Upload a New Blog</button></a>
+    <h3>Upload a File :</h3>
+    <form action="/editblogs" enctype="multipart/form-data" method="post">
+      <h4 class="d-inline" >HTML File : </h4>
+      <input type="file" class="btn mb-2 btn-info" name="html_file" id="html_file">
+      <br>
+      <h4 class="d-inline" >Media File : </h4>
+      <input type="file" class="btn mb-4 btn-info" name="media_file" id="media_file">
+      <br>
+      <button class="btn btn-success" type="submit">Upload File</button></form>
+  </div>
+<h1>All Blogs List</h1>
+<table class="table table-dark table-hover">
+    <thead>
+      <tr>
+        <th scope="col">ID , Date</th>
+        <th scope="col">Title</th>
+        <th scope="col">Slug</th>
+        <th scope="col">File Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for blog in allblogs %}
+        <tr>
+            <th scope="row">{{blog.id}} <br> {{blog.date}}</th>
+            <td>{{blog.title}}</td>
+            <td>{{blog.slug}}</td>
+            <td>{{blog.filename}}</td>
+            <td><a href="/editblogs/{{blog.id}}">
+            <button class="btn btn-warning" >Edit</button></a>
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

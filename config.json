@@ -1,0 +1,93 @@
+{
+    "parameters" : {
+        "server_uri": "mysql://root:123456@127.0.0.1:3306/PRCdb" ,
+        "adminname":"prashant",
+        "UPLOAD_FOLDER":"/sdcard/1coding/website/myweb/templates/blogs/",
+        "MEDIA_UPLOAD_FOLDER":"/sdcard/1coding/website/myweb/static/images/uploded/",
+        "ALLOWED_EXTENSIONS":["html"],
+        "ALLOWED_MEDIA":["jpg","png","jpeg"]
+    } ,
+    "services" : {
+        "allfreelancing":[
+            "webdevelopment",
+            "coding",
+            "webscraping",
+            "artificialintelligence"
+        ],
+        "allteaching":[
+            "webdevelopment",
+            "coding",
+            "hacking",
+            "artificialintelligence",
+            "acadmics"
+        ],
+        "freelancing":[
+            {
+                "title":"Web Development",
+                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
+                "link":"/freelancing/webdevelopment",
+                "bg":"webdev.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Coding (scripts , automation, bugs fixing )",
+                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
+                "link":"/freelancing/coding",
+                "bg":"code.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Web Scraping",
+                "about":"thgbk hbkj ghj dfiog uj5or jgkldmvfopfdjfkds jfoidjg idfjvdjg iubi fbf fivj fvjighfiugbnif ufv fhvfhjg vfhh",
+                "link":"/freelancing/webscraping",
+                "bg":"scraping.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Artificial Intelligence",
+                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
+                "link":"/freelancing/artificialintelligence",
+                "bg":"ai.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            }
+        ],
+        "teaching":[
+            {
+                "title":"Learn Web Development",
+                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link":"/teaching/webdevelopment",
+                "bg":"bg.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Learn Coding",
+                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link":"/teaching/coding",
+                "bg":"codelearn.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Learn Hacking",
+                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link":"/teaching/hacking",
+                "bg":"hacking.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Learn Artificial Intelligence",
+                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link":"/teaching/artificialintelligence",
+                "bg":"aiteach.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            },
+            {
+                "title":"Acadmics",
+                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link":"/teaching/acadmics",
+                "bg":"acadmics.jpg",
+                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+            }
+        ]
+    }
+    
+}
