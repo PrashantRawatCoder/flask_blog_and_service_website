@@ -84,13 +84,15 @@
         </li>
         {% if (('loggedin' in session) and session['loggedin'] and (session['username']==parameters['adminname'])) %}
         <li class="nav-item ">
-          <a class="nav-link {% block contactrequestsactive %}{% endblock %}" href="/contactrequests">Contact Requests</a>
+          <a class="nav-link {% block contactrequestsactive %}{% endblock %}" href="/contactrequests">Contact
+            Requests</a>
         </li>
         <li class="nav-item {% block editblogsactive %}{% endblock %}">
           <a class="nav-link" href="/editblogs">Edit Blogs</a>
         </li>
         {% endif %}
-        {% if not (('loggedin' in session) and session['loggedin'] and (session['username']==parameters['adminname'])) %}
+        {% if not (('loggedin' in session) and session['loggedin'] and (session['username']==parameters['adminname']))
+        %}
         <li class="nav-item {% block contactactive %}{% endblock %}">
           <a class="nav-link" href="/contact">Contact</a>
         </li>
@@ -105,8 +107,6 @@
             <a class="dropdown-item drophover" href="/freelancing/webdevelopment">Web Develpoment</a>
             <a class="dropdown-item drophover" href="/freelancing/artificialintelligence">AI</a>
             <a class="dropdown-item drophover" href="/freelancing/coding">Coding</a>
-            <a class="dropdown-item drophover" href="/teaching/hacking">Learn Hacking</a>
-            <a class="dropdown-item drophover" href="/teaching/coding">Learn Coding</a>
           </div>
         </li>
       </ul>
@@ -129,16 +129,24 @@
 </body>
 <footer class="text-white footer bg-darkblue translate-middle-x">
   <div class="d-flex justify-content-center text-center">
-    <a href="/" class="p-3"><img class="logo" src="{{url_for('static', filename='images/youtubelogo.png')}}" herf="/"
-        alt="youtube"></a>
-    <a href="/" class="p-3"><img class="logo" src="{{url_for('static', filename='images/githublogo.png')}}" herf="/"
-        alt="github"></a>
-    <a href="/" class="p-3"><img class="logo" src="{{url_for('static', filename='images/twitterlogo.jpg')}}" herf="/"
-        alt="twitter"></a>
-    <a href="/" class="p-3"><img class="logo" src="{{url_for('static', filename='images/linkedinlogo.png')}}" herf="/"
-        alt="linkedin"></a>
-    <a href="/" class="p-3"><img class="logo" src="{{url_for('static', filename='images/telegramlogo.jpg')}}" herf="/"
-        alt="telegram"></a>
+    <a href="//instagram.com/prashantrawatcoder/" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/instalogo.jpg')}}" herf="/" alt="instagram"></a>
+    <a href="//github.com/PrashantRawatCoder/" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/githublogo.png')}}" herf="/" alt="github"></a>
+    <a href="//twitter.com/PrashantR_Coder" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/twitterlogo.jpg')}}" herf="/" alt="twitter"></a>
+    <a href="//linkedin.com/in/prashant-rawat-coder" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/linkedinlogo.png')}}" herf="/" alt="linkedin"></a>
+    <a href="//t.me/Prashant_Rawat" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/telegramlogo.jpg')}}" herf="/" alt="telegram"></a>
+    <!-- <a herf="//github.com/PrashantRawatCoder" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/githublogo.png')}}" herf="/" alt="github"></a>
+    <a href="//twitter.com/PrashantR_Coder" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/twitterlogo.jpg')}}" herf="/" alt="twitter"></a>
+    <a herf="//linkedin.com/in/prashant-rawat-coder" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/linkedinlogo.png')}}" herf="/" alt="linkedin"></a>
+    <a herf="//t.me/Prashant_Rawat" class="p-3"><img class="logo"
+        src="{{url_for('static', filename='images/telegramlogo.jpg')}}" herf="/" alt="telegram"></a> -->
   </div>
   <div class="d-flex justify-content-center text-center">
     <h5 class="p-3">PrashantRawatCoder • © Copyright 2023</h5>

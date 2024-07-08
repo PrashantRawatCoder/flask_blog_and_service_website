@@ -1,93 +1,98 @@
 {
-    "parameters" : {
-        "server_uri": "mysql://root:123456@127.0.0.1:3306/PRCdb" ,
-        "adminname":"prashant",
-        "UPLOAD_FOLDER":"/sdcard/1coding/website/myweb/templates/blogs/",
-        "MEDIA_UPLOAD_FOLDER":"/sdcard/1coding/website/myweb/static/images/uploded/",
-        "ALLOWED_EXTENSIONS":["html"],
-        "ALLOWED_MEDIA":["jpg","png","jpeg"]
-    } ,
-    "services" : {
-        "allfreelancing":[
+    "parameters": {
+        "server_uri": "mysql+pymysql://root:1234@127.0.0.1:3306/PRCdb",
+        "adminname": "prashant",
+        "UPLOAD_FOLDER": "/sdcard/1coding/website/myweb/templates/blogs/",
+        "MEDIA_UPLOAD_FOLDER": "/sdcard/1coding/website/myweb/static/images/uploded/",
+        "ALLOWED_EXTENSIONS": [
+            "html"
+        ],
+        "ALLOWED_MEDIA": [
+            "jpg",
+            "png",
+            "jpeg"
+        ]
+    },
+    "services": {
+        "allfreelancing": [
             "webdevelopment",
             "coding",
             "webscraping",
             "artificialintelligence"
         ],
-        "allteaching":[
+        "allprojects": [
             "webdevelopment",
             "coding",
             "hacking",
             "artificialintelligence",
             "acadmics"
         ],
-        "freelancing":[
+        "freelancing": [
             {
-                "title":"Web Development",
-                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
-                "link":"/freelancing/webdevelopment",
-                "bg":"webdev.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Web Development",
+                "about": "I bring a wealth of knowledge and enthusiasm to every project I undertake. I can make Backend+Frontend ready web application with hosting service too!",
+                "link": "/freelancing/webdevelopment",
+                "bg": "webdev.jpg",
+                "description": "<h4>Why Choose My Services?</h4><h5>1. Unmatched Passion and Fresh Perspective</h5><p>As a young programmer, I approach web development with a unique perspective and boundless energy. Every project is an opportunity for me to learn, innovate, and push the boundaries of what is possible. My passion for programming translates into meticulous attention to detail and a commitment to delivering top-notch results.</p><h5>2. Expertise in Flask for Powerful Web Applications</h5><p>Flask, a lightweight yet powerful web framework for Python, is my go-to tool for developing dynamic and responsive web applications. Whether you need a simple website or a complex web app, I leverage Flask's flexibility and scalability to create solutions tailored to your specific needs. From front-end design to back-end functionality, I ensure a seamless user experience.</p><h5>3. Affordable Pricing</h5><p>Understanding the financial constraints many clients face, I offer my services at highly competitive rates. My goal is to provide high-quality web development without breaking the bank. By choosing my services, you get professional-grade applications at a fraction of the cost. My affordable pricing stems from my commitment to learning and growing with each project, making every task a mutually beneficial experience.</p><h5>4. Comprehensive Web Development Services</h5><p>I offer a wide range of web development services to meet diverse needs:</p><ul><li>Custom Web Applications: Tailored solutions that align perfectly with your business goals.</li><li>Responsive Web Design: Ensuring your website looks and functions flawlessly on all devices.</li><li>API Integration: Seamlessly connecting your application with third-party services.</li><li>Database Management: Efficiently handling your data with secure and scalable database solutions.</li><li>Maintenance and Support: Ongoing support to keep your web applications running smoothly.</li></ul><h5>5. Strong Technical Skills</h5><p>My proficiency in Python, C, and C++ gives me a solid foundation to tackle any programming challenge. This diverse skill set enables me to choose the best tools and technologies for each project, ensuring optimal performance and reliability. Additionally, my continuous learning mindset ensures I stay updated with the latest trends and best practices in web development.</p><h5>6. Client-Centric Approach</h5><p>Your satisfaction is my top priority. I work closely with you to understand your vision and requirements, ensuring the final product exceeds your expectations. My process involves:</p><ul><li>Consultation: Understanding your needs, goals, and target audience.</li><li>Planning: Crafting a detailed plan and timeline for the project.</li><li>Development: Building the application with regular updates and feedback loops.</li><li>Testing: Rigorous testing to ensure functionality, security, and performance.</li><li>Deployment: Launching the application and providing any necessary training.</li><li>Support: Offering ongoing support and maintenance as needed.</li></ul><h5>7. Proven Track Record</h5><p>Despite my age, I have successfully completed numerous projects for satisfied clients. My portfolio showcases a variety of web applications, each reflecting my commitment to quality and innovation. From e-commerce platforms to personal blogs, I have demonstrated my ability to deliver effective and aesthetically pleasing solutions.</p><h5>8. Learning and Innovation</h5><p>Every project is a stepping stone in my journey as a programmer. I embrace challenges and view them as opportunities to learn and grow. By hiring me, you not only get a skilled developer but also someone who is genuinely invested in the success of your project. My continuous pursuit of knowledge ensures that I bring the latest techniques and technologies to the table.</p><h4>Let's Build Something Great Together</h4><p>Choosing the right web developer can make a significant difference in the success of your online presence. With my blend of youthful enthusiasm, technical expertise, and commitment to affordability, I am confident in my ability to deliver exceptional web solutions tailored to your needs. Whether you are a small business owner, an entrepreneur, or someone with a unique idea, I am here to help bring your vision to life.</p> Let's embark on this exciting journey together and create something truly remarkable.</p>"
             },
             {
-                "title":"Coding (scripts , automation, bugs fixing )",
-                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
-                "link":"/freelancing/coding",
-                "bg":"code.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Coding (scripts , automation, bugs fixing )",
+                "about": "My expertise spans over Python,C,C++ Flask allowing me to craft good and bugfree scripts. I can develop Automation scripts, Tests for your application. I can review and fix your code too!",
+                "link": "/freelancing/coding",
+                "bg": "code.jpg",
+                "description": "<h4>Why Choose My Services?</h4><h5>1. Unmatched Passion and Fresh Perspective</h5><p>As a young programmer, I approach coding with a unique perspective and boundless energy. Every project is an opportunity for me to learn, innovate, and push the boundaries of what is possible. My passion for programming translates into meticulous attention to detail and a commitment to delivering top-notch results.</p><h5>2. Expertise in Scripts and Automation</h5><p>Whether you need a custom script to automate repetitive tasks or a complex automation solution, I have the skills and knowledge to deliver. Leveraging tools like Python, I create efficient and reliable scripts that streamline your workflows, saving you time and effort. My solutions are tailored to meet your specific needs and are designed to integrate seamlessly into your existing systems.</p><h5>3. Affordable Pricing</h5><p>Understanding the financial constraints many clients face, I offer my services at highly competitive rates. My goal is to provide high-quality coding solutions without breaking the bank. By choosing my services, you get professional-grade work at a fraction of the cost. My affordable pricing stems from my commitment to learning and growing with each project, making every task a mutually beneficial experience.</p><h5>4. Comprehensive Coding Services</h5><p>I offer a wide range of coding services to meet diverse needs:</p><ul><li>Custom Scripts: Tailored solutions to automate tasks and improve efficiency.</li><li>Automation Solutions: Streamlining your workflows with reliable automation.</li><li>Bug Fixing: Identifying and resolving issues to ensure your systems run smoothly.</li><li>Performance Optimization: Enhancing the speed and efficiency of your code.</li><li>Code Review and Refactoring: Improving code quality and maintainability.</li></ul><h5>5. Strong Technical Skills</h5><p>My proficiency in Python, C, and C++ gives me a solid foundation to tackle any programming challenge. This diverse skill set enables me to choose the best tools and technologies for each project, ensuring optimal performance and reliability. Additionally, my continuous learning mindset ensures I stay updated with the latest trends and best practices in coding.</p><h5>6. Client-Centric Approach</h5><p>Your satisfaction is my top priority. I work closely with you to understand your vision and requirements, ensuring the final product exceeds your expectations. My process involves:</p><ul><li>Consultation: Understanding your needs, goals, and existing systems.</li><li>Planning: Crafting a detailed plan and timeline for the project.</li><li>Development: Writing and testing the code with regular updates and feedback loops.</li><li>Testing: Rigorous testing to ensure functionality, security, and performance.</li><li>Deployment: Implementing the solution and providing any necessary training.</li><li>Support: Offering ongoing support and maintenance as needed.</li></ul><h5>7. Proven Track Record</h5><p>Despite my age, I have successfully completed numerous projects for satisfied clients. My portfolio showcases a variety of coding solutions, each reflecting my commitment to quality and innovation. From simple scripts to complex automation systems, I have demonstrated my ability to deliver effective and reliable solutions.</p><h5>8. Learning and Innovation</h5><p>Every project is a stepping stone in my journey as a programmer. I embrace challenges and view them as opportunities to learn and grow. By hiring me, you not only get a skilled developer but also someone who is genuinely invested in the success of your project. My continuous pursuit of knowledge ensures that I bring the latest techniques and technologies to the table.</p><h4>Let's Build Something Great Together</h4><p>Choosing the right coder can make a significant difference in the efficiency and reliability of your systems. With my blend of youthful enthusiasm, technical expertise, and commitment to affordability, I am confident in my ability to deliver exceptional coding solutions tailored to your needs. Whether you are a small business owner, an entrepreneur, or someone with a unique challenge, I am here to help bring your vision to life.</p>"
             },
             {
-                "title":"Web Scraping",
-                "about":"thgbk hbkj ghj dfiog uj5or jgkldmvfopfdjfkds jfoidjg idfjvdjg iubi fbf fivj fvjighfiugbnif ufv fhvfhjg vfhh",
-                "link":"/freelancing/webscraping",
-                "bg":"scraping.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Web Scraping",
+                "about": "I use PYTHON , SELENIUM , BEAUTIFUL SOUP 4 , REQUESTS and many more advanced tools for web scraping for your efficient and accurate services !",
+                "link": "/freelancing/webscraping",
+                "bg": "scraping.jpg",
+                "description": "<h4>Why Choose My Services?</h4><h5>1. Unmatched Passion and Fresh Perspective</h5><p>As a young programmer, I approach web scraping with a unique perspective and boundless energy. Every project is an opportunity for me to learn, innovate, and push the boundaries of what is possible. My passion for programming translates into meticulous attention to detail and a commitment to delivering top-notch results.</p><h5>2. Expertise in Web Scraping Technologies</h5><p>I utilize powerful web scraping tools such as Selenium, Beautiful Soup 4, and Requests to extract accurate and valuable data from websites. Whether you need data for market research, competitive analysis, or any other purpose, I have the skills and knowledge to deliver precise and reliable results.</p><h5>3. Affordable Pricing</h5><p>Understanding the financial constraints many clients face, I offer my services at highly competitive rates. My goal is to provide high-quality web scraping solutions without breaking the bank. By choosing my services, you get professional-grade data extraction at a fraction of the cost. My affordable pricing stems from my commitment to learning and growing with each project, making every task a mutually beneficial experience.</p><h5>4. Comprehensive Web Scraping Services</h5><p>I offer a wide range of web scraping services to meet diverse needs:</p><ul><li>Data Extraction: Collecting data from websites for various purposes.</li><li>Data Cleaning and Formatting: Ensuring the data is clean, structured, and ready for analysis.</li><li>Automation of Data Collection: Setting up automated scripts to regularly collect data.</li><li>Custom Web Scraping Solutions: Tailored solutions to meet specific data extraction requirements.</li></ul><h5>5. Strong Technical Skills</h5><p>My proficiency in Python, along with my expertise in tools like Selenium, Beautiful Soup 4, and Requests, gives me a solid foundation to tackle any web scraping challenge. This diverse skill set enables me to choose the best tools and technologies for each project, ensuring optimal performance and reliability. Additionally, my continuous learning mindset ensures I stay updated with the latest trends and best practices in web scraping.</p><h5>6. Client-Centric Approach</h5><p>Your satisfaction is my top priority. I work closely with you to understand your vision and requirements, ensuring the final product exceeds your expectations. My process involves:</p><ul><li>Consultation: Understanding your needs, goals, and data requirements.</li><li>Planning: Crafting a detailed plan and timeline for the project.</li><li>Development: Writing and testing the web scraping scripts with regular updates and feedback loops.</li><li>Testing: Rigorous testing to ensure data accuracy and reliability.</li><li>Deployment: Implementing the solution and providing any necessary training.</li><li>Support: Offering ongoing support and maintenance as needed.</li></ul><h5>7. Proven Track Record</h5><p>Despite my age, I have successfully completed numerous web scraping projects for satisfied clients. My portfolio showcases a variety of data extraction solutions, each reflecting my commitment to quality and innovation. From small data extraction tasks to large-scale web scraping projects, I have demonstrated my ability to deliver effective and reliable solutions.</p><h5>8. Learning and Innovation</h5><p>Every project is a stepping stone in my journey as a programmer. I embrace challenges and view them as opportunities to learn and grow. By hiring me, you not only get a skilled developer but also someone who is genuinely invested in the success of your project. My continuous pursuit of knowledge ensures that I bring the latest techniques and technologies to the table.</p><h4>Let's Build Something Great Together</h4><p>Choosing the right web scraper can make a significant difference in the efficiency and accuracy of your data collection. With my blend of youthful enthusiasm, technical expertise, and commitment to affordability, I am confident in my ability to deliver exceptional web scraping solutions tailored to your needs. Whether you are a small business owner, an entrepreneur, or someone with a unique data requirement, I am here to help bring your vision to life.</p>"
             },
             {
-                "title":"Artificial Intelligence",
-                "about":"lorem dshfu fuhgfvhg ghfduhv dfvhudiuf iuhgifuh vuhfg fguhf ghfuigvhfudihvf hvnfu ufhv ishvu fhv svuhf bghu",
-                "link":"/freelancing/artificialintelligence",
-                "bg":"ai.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Artificial Intelligence",
+                "about": "Coming SOON .......................................",
+                "link": "/freelancing/artificialintelligence",
+                "bg": "ai.jpg",
+                "description": "I will learn AI and ML soon ."
             }
         ],
-        "teaching":[
+        "projects": [
             {
-                "title":"Learn Web Development",
-                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link":"/teaching/webdevelopment",
-                "bg":"bg.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Learn Web Development",
+                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link": "/projects/webdevelopment",
+                "bg": "bg.jpg",
+                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             },
             {
-                "title":"Learn Coding",
-                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link":"/teaching/coding",
-                "bg":"codelearn.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Learn Coding",
+                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link": "/projects/coding",
+                "bg": "codelearn.jpg",
+                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             },
             {
-                "title":"Learn Hacking",
-                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link":"/teaching/hacking",
-                "bg":"hacking.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Learn Hacking",
+                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link": "/projects/hacking",
+                "bg": "hacking.jpg",
+                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             },
             {
-                "title":"Learn Artificial Intelligence",
-                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link":"/teaching/artificialintelligence",
-                "bg":"aiteach.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Learn Artificial Intelligence",
+                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link": "/projects/artificialintelligence",
+                "bg": "aiteach.jpg",
+                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             },
             {
-                "title":"Acadmics",
-                "about":"sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link":"/teaching/acadmics",
-                "bg":"acadmics.jpg",
-                "description":"Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "title": "Acadmics",
+                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "link": "/projects/acadmics",
+                "bg": "acadmics.jpg",
+                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             }
         ]
     }
-    
 }

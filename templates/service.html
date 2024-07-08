@@ -4,32 +4,32 @@
 {% endblock %}
 {% block style %}
 <style>
-    .title{
-        color:black;
+    .title {
+        color: black;
         background-image: url("{{url_for('static',filename='images/'+service['bg'])}}");
         background-size: cover;
     }
-    .about{
+
+    .about {
         padding-left: 4%;
         padding-right: 4%;
     }
-
 </style>
 {% endblock %}
 {% block body %}
 <div class="title text-center">
     <h1 style="padding-top: 100px; padding-bottom: 50px;">
-        {{service['title']}}    
+        {{service['title']}}
     </h1>
     <h4 class="d-inline m-4">Want This Service ?</h4>
     <a href="/contact"><button class="my-4 btn btn-warning">Contact Me</button></a>
 </div>
 <div class="m-2 about">
-<h2>About</h2>
-<h5>
-    {{service['about']}}
-</h5>
-<h2>Description</h2>
-<p>{{service['description']}}</p>
+    <h2>About</h2>
+    <h5>
+        {{service['about']}}
+    </h5>
+    <h2>Description</h2>
+    {{service['description'] | safe}}
 </div>
 {% endblock %}

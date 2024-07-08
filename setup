@@ -1,0 +1,2 @@
+pip install flask flask-SQLAlchemy flask-bcrypt
+apt-get install phpmyadmin
