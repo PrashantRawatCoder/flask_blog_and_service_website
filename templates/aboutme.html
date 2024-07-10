@@ -4,11 +4,11 @@
 
 <style>
     body {
-        background-image: url("{{url_for('static',filename='images/aboutme_background.jpg')}}");
+        background-image: url("{{url_for('static',filename='images/aboutme-background.jpeg')}}");
         min-height: 100vh;
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        background-repeat: repeat-y;
+        background-size: 100% auto;
     }
 
 
@@ -381,7 +381,7 @@
         width: var(--inlineP);
         aspect-ratio: 1;
         background: var(--accent-color);
-        background-image: linear-gradient(rgba(0, 0, 0, 0.53) 100%, transparent);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.585) 100%, transparent);
         position: absolute;
         top: 100%;
 
@@ -407,7 +407,7 @@
     /* title descr */
     .timeline ul li .title,
     .timeline ul li .descr {
-        background: rgba(0, 0, 0, 0.385);
+        background: rgba(0, 0, 0, 0.507);
         position: relative;
         padding-inline: 1.5rem;
     }
@@ -490,14 +490,32 @@
 
     <div class="gradient-box">
         <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
-        <div class="content">
-            <h1>Hlo boyssss!</h1>
-            <p>Krishan Rawat is best coder! VVIP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique,
-                consequuntur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae exercitationem velit
-                cumque blanditiis adipisci obcaecati, facere deleniti unde quibusdam quidem saepe alias ab tempore quia
-                a possimus, sed quis autem magnam, nobis itaque. Expedita, aliquid nesciunt nihil explicabo repudiandae
-                voluptatibus repellat dolor minima natus eveniet assumenda, commodi rem. Deserunt, unde?</p>
-            <h1>FOOL</h1>
+        <div class="content m-1">
+            <h1 style="margin-left: 10px;">Prashant Rawat</h1>
+            <h4 style="margin-left: 10px;">{{age_time}} &#128518;</h4>
+            <h4 style="margin-left: 10px;">Male</h4>
+            <h4 style="margin-left: 10px;">📌 From Palwal,Haryana,India 🇮🇳</h4>
+            <h5 style="margin: 100px 20px 10px 20px;">
+                Hello! I'm a dedicated and passionate 15-year-old programmer from Haryana, India. Currently, I am a
+                10th-grade
+                student, and I have been captivated by the world of programming since I was 11. My journey began with a
+                simple
+                curiosity about how computers work, and it quickly evolved into a deep-seated love for coding.
+                <br>
+                <br>
+                I am proficient in Python, C++, and C, and I have the ability to immerse myself in programming for up to
+                12 hours
+                a day. My enthusiasm for learning and improving my skills is boundless, and I am constantly seeking new
+                challenges
+                and opportunities to grow.
+                <br>
+                <br>
+                I am always open to suggestions, mentorship, or collaborative opportunities to enhance my learning
+                experience. If
+                you have any advice or would like to connect, please feel free to reach out. Let's connect and create
+                something
+                amazing together!
+            </h5>
         </div>
     </div>
     <h1 class="heading">My Skills</h1>
@@ -506,11 +524,13 @@
             <div class="content">
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/pythonlogo.png')}}" alt="logo">
-                <h3>Service One</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
-                    quibusdam nisi!</p>
-                <div class="skillbar advanced" data-skill="Python"></div>
+                <h3>Python</h3>
+                <p>I am highly proficient in Python, my first programming language. Over the years, I have developed
+                    numerous projects showcasing my skills. These include "Math Duck," an engaging game created with
+                    Pygame, Online chat app, several automatic Web Scrapers, Automation bots, and various terminal-based
+                    programmes. My experience covers a wide range of applications, demonstrating my ability to solve
+                    problems efficiently and create interactive, enjoyable software.</p>
+                <div class="skillbar expert" data-skill="Python"></div>
 
             </div>
         </div>
@@ -519,13 +539,14 @@
             <div class="content">
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/cpplogo.png')}}" alt="logo">
-                <h3>Service Two</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
-                    eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
-                    sint
-                    quibusdam nisi!</p>
-                <div class="skillbar basic" data-skill="C"></div>
+                <h3>C++</h3>
+                <p>I am proficient in C++, having applied my skills to a variety of projects and areas. Notably, I
+                    developed "Lizard Trap," an engaging 2D open game. My experience also includes work in data
+                    structures and algorithms (DSA), which has deepened my understanding of efficient coding practices.
+                    Additionally, I have created several terminal scripts, further showcasing my versatility and
+                    problem-solving abilities in C++.</p>
+                <br>
+                <div class="skillbar advanced" data-skill="C++"></div>
             </div>
         </div>
 
@@ -533,13 +554,12 @@
             <div class="content">
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/clogo.png')}}" alt="logo">
-                <h3>Service Three</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
-                    eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
-                    sint
-                    quibusdam nisi!</p>
-                <div class="skillbar intermediate" data-skill="C++"></div>
+                <h3>C</h3>
+                <p>While I am not as comfortable with C as with other languages, I am capable of writing C code
+                    effectively. Many times i write C code when I need efficiency in my programms. My foundational
+                    knowledge allows me to understand and implement basic to intermediate C
+                    programs, enabling me to work on projects that require C programming.</p><br>
+                <div class="skillbar basic" data-skill="C"></div>
             </div>
         </div>
 
@@ -547,12 +567,13 @@
             <div class="content">
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/flasklogo.png')}}" alt="logo">
-                <h3>Service Four</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
-                    eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
-                    sint
-                    quibusdam nisi!</p>
+                <h3>Flask</h3>
+                <p>I excel in using Flask to develop comprehensive web applications. I have created numerous websites
+                    with Flask, including my own. My expertise spans both frontend and backend development, enabling me
+                    to build robust, scalable, and user-friendly web solutions. My skills in Flask ensure efficient and
+                    dynamic web application development, tailored to meet diverse requirements.
+                </p>
+                <br>
                 <div class="skillbar advanced" data-skill="Flask"></div>
             </div>
         </div>
@@ -562,38 +583,65 @@
     <div class="timeline">
         <h1 class="heading">My Journey</h1>
         <ul>
-            <li style="--accent-color:#41516C">
-                <div class="date">2002</div>
-                <div class="title">Title 1</div>
-                <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic
-                    quibusdam
-                    fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
-            </li>
-            <li style="--accent-color:#FBCA3E">
-                <div class="date">2007</div>
-                <div class="title">Title 2</div>
-                <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis
-                    nostrum
-                    vero nihil veniam.</div>
-            </li>
-            <li style="--accent-color:#E24A68">
-                <div class="date">2012</div>
-                <div class="title">Title 3</div>
-                <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur
-                    soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit,
-                    sequi
-                    quo, et dolorum saepe nulla hic.</div>
-            </li>
-            <li style="--accent-color:#1B5F8C">
-                <div class="date">2017</div>
-                <div class="title">Title 4</div>
-                <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
+            <li style="--accent-color: #00a000">
+                <div class="date">2024 : Jun - Jul</div>
+                <div class="title">Projects and DSA</div>
+                <div class="descr">
+
+                    In June and July 2024, I worked on several projects while starting to learn data structures and
+                    algorithms (DSA). This period was dedicated to further enhancing my coding skills and tackling more
+                    complex programming challenges.
+                </div>
             </li>
             <li style="--accent-color:#4CADAD">
-                <div class="date">2022</div>
-                <div class="title">Title 5</div>
-                <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
+                <div class="date">2024 : Feb - May</div>
+                <div class="title">Learning C and C++</div>
+                <div class="descr">
+                    From February to May 2024, I focused on learning C and C++. During this period, I developed a 2D SDL
+                    game called "Lizard Trap," which showcased my growing expertise in these languages and game
+                    development.
+                </div>
             </li>
+            <li style="--accent-color:#FBCA3E">
+                <div class="date">2021</div>
+                <div class="title">Learning Python</div>
+                <div class="descr">
+                    In 2021, I began my journey with Python, learning the basics at a steady pace. I dedicated time to
+                    understanding the syntax, concepts, and structure of the language. This foundational year was
+                    crucial in building my confidence and competence in Python programming.</div>
+            </li>
+            <li style="--accent-color:#E24A68">
+                <div class="date">2022</div>
+                <div class="title">Advancing in Python</div>
+                <div class="descr">
+                    Throughout 2022, I deepened my knowledge of Python and practiced extensively. I developed several
+                    Python games using Pygame, which helped me enhance my coding skills and gain practical experience.
+                    This year solidified my proficiency in Python and expanded my project portfolio.
+                </div>
+            </li>
+            <li style="--accent-color:#1B5F8C">
+                <div class="date">2023</div>
+                <div class="title">Exploring New Domains</div>
+                <div class="descr">
+                    In 2023, I ventured into various coding domains, including Android development, web development,
+                    machine learning, artificial intelligence, data structures, and algorithms. I also learned Flask and
+                    created multiple projects. This exploration broadened my skill set and provided a comprehensive
+                    understanding of different technological fields.
+                </div>
+            </li>
+
+
+            <li style="--accent-color:#41516C">
+                <div class="date">2020</div>
+                <div class="title">Discovery During Lockdown</div>
+                <div class="descr">During the COVID-19 lockdown in 2020, I began exploring the internet and became
+                    curious about how computers work. This curiosity led me to discover coding, and from that day on, I
+                    started learning programming. It was a transformative period that ignited my passion for technology
+                    and set me on the path to becoming a programmer.</div>
+            </li>
+
+
+
         </ul>
     </div>
 </div>

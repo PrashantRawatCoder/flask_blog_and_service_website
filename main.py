@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, session, flash
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
-from datetime import datetime
+from datetime import datetime, time, timedelta
 import os.path
 import json
 import re
@@ -62,7 +62,15 @@ def home():
 
 @app.route("/aboutme")
 def aboutme():
-    return render_template("aboutme.html")
+    age_time = datetime.now() - datetime(2009, 1, 8, 10, 23, 23)
+    days = age_time.days
+    years = int(days / 365)
+    months = int((days % 365) / 30.2)
+    days = int((days % 365) % 30.2)
+    return render_template(
+        "aboutme.html",
+        age_time=f"{years} years, {months} months, {days} days Old",
+    )
 
 
 @app.route("/blogs")

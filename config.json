@@ -21,7 +21,7 @@
             "artificialintelligence"
         ],
         "allprojects": [
-            "personal website"
+            "personalwebsite"
         ],
         "freelancing": [
             {
@@ -57,37 +57,9 @@
             {
                 "title": "Personal Website",
                 "about": "Of Course , I am talking about this website. It's amazing , isn't it ? Try visiting AboutMe page or just think about blog uploading system and conatct service intregrated in this website.",
-                "link": "/projects/webdevelopment",
+                "link": "/projects/personalwebsite",
                 "bg": "bg.jpg",
                 "description": "<h4>Features of my website </h4><u><li>Blog Posting system.</li></u>"
-            },
-            {
-                "title": "Learn Coding",
-                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link": "/projects/coding",
-                "bg": "codelearn.jpg",
-                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
-            },
-            {
-                "title": "Learn Hacking",
-                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link": "/projects/hacking",
-                "bg": "hacking.jpg",
-                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
-            },
-            {
-                "title": "Learn Artificial Intelligence",
-                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link": "/projects/artificialintelligence",
-                "bg": "aiteach.jpg",
-                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
-            },
-            {
-                "title": "Acadmics",
-                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
-                "link": "/projects/acadmics",
-                "bg": "acadmics.jpg",
-                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
             }
         ]
     }
