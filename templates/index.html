@@ -8,6 +8,157 @@ PrashantRawatCoder
 <style>
   body {
     color: black;
+    background-image: linear-gradient(135deg, rgb(0, 172, 175), rgb(82, 136, 0));
+  }
+
+
+  .diagonal-box-aboutme {
+    position: relative;
+    padding: 35px 0 30px 0;
+    margin: 20px 0px 90px ;
+
+  }
+
+  .diagonal-box-aboutme:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #654ea3, #eaafc8);
+    transform: skewY(-4deg);
+  }
+
+  .diagonal-box-projects {
+    position: relative;
+    padding: 35px 0 30px 0;
+    margin: 90px 0px;
+
+  }
+
+  .diagonal-box-projects:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #30937a, #6639e3);
+    transform: skewY(4deg);
+  }
+
+  .diagonal-box-freelancing {
+    position: relative;
+    padding: 35px 0 30px 0;
+    margin: 90px 0px;
+
+  }
+
+  .diagonal-box-freelancing:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #a34e4e, #eae2af);
+    transform: skewY(-4deg);
+  }
+
+
+  .imgbg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    color: black;
+    box-shadow: 10px 10px 20px black;
+  }
+
+  .glow-on-hover {
+    border: none;
+    outline: none;
+    padding: 15px;
+    margin: 20px auto;
+    text-decoration: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 6px;
+  }
+
+  .glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+  }
+
+  .glow-on-hover:active {
+    color: #000
+  }
+
+  .glow-on-hover:active:after {
+    background: transparent;
+  }
+
+  .glow-on-hover:hover:before {
+    opacity: 1;
+  }
+
+  .glow-on-hover:hover {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .glow-on-hover:after {
+
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
   }
 
   #home-about:after {
@@ -15,7 +166,6 @@ PrashantRawatCoder
     display: table;
     clear: both;
   }
-
 
   @media screen and (max-width: 900px) {
 
@@ -50,18 +200,6 @@ PrashantRawatCoder
       background: linear-gradient(red, rgb(255, 17, 156), blue) padding-box, linear-gradient(to top, rgb(255, 0, 119), rgb(221, 0, 255), rgb(55, 0, 255), rgb(0, 162, 255)) border-box;
     }
 
-    .imgbg {
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 10px;
-      margin-bottom: 10px;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 15px;
-      color: black;
-      box-shadow: 10px 10px 20px black;
-    }
 
     .blogpd {
       margin: 0;
@@ -71,20 +209,6 @@ PrashantRawatCoder
   @media screen and (min-width: 901px) {
     .blogpd {
       margin: 0;
-    }
-
-    .imgbg {
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 15px;
-      color: black;
-      background-size: cover;
-      box-shadow: 10px 10px 20px black;
     }
 
     #home-about {
@@ -184,62 +308,60 @@ PrashantRawatCoder
   <h1>Welcome to </h1>
   <h1 class=" typed">PrashantRawatCoder</h1>
 </div>
-
-<div class="p-2" id="home-about">
-  <div class="home-about-1">
-    <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
-  </div>
-  <div class="home-about-2 p-3">
-    <p>Hello! I'm a dedicated and passionate 15-year-old programmer from Haryana, India. Currently, I am a 10th-grade
-      student, and I have been captivated by the world of programming since I was 11. My journey began with a simple
-      curiosity about how computers work, and it quickly evolved into a deep-seated love for coding.</p>
-  </div>
-</div>
-<div class="text-center">
-  <a class="btn btn-primary" href="/aboutme">Know More</a>
-</div>
-<hr>
-<h1 class="m-4 homewel">Services</h1>
-
-
-<h2 class="m-4"> • Projects</h2>
-<div class="container-fluid px-4">
-  <div class="row">
-    {% for service in services['projects'] %}
-    <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
-      style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
-      <h4>{{service['title']}}</h4>
-      <p>{{service['about']}}</p>
-      <div class="text-center">
-        <a class="btn btn-dark" href="{{service['link']}}">Know More</a>
-      </div>
+<div class="diagonal-box-aboutme">
+  <div class="p-2" id="home-about">
+    <div class="home-about-1">
+      <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
     </div>
-    {% endfor %}
-  </div>
-</div>
-
-<h2 class="m-4"> • Freelancing</h2>
-<div class="container-fluid px-4">
-  <div class="row">
-    {% for service in services['freelancing'] %}
-    <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
-      style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
-      <h4>{{service['title']}}</h4>
-      <p>{{service['about']}}</p>
-      <div class="text-center">
-        <a class="btn btn-dark" href="{{service['link']}}">Know More</a>
-      </div>
+    <div class="home-about-2 p-3">
+      <p>Hello! I'm a dedicated and passionate 15-year-old programmer from Haryana, India. Currently, I am a 10th-grade
+        student, and I have been captivated by the world of programming since I was 11. My journey began with a simple
+        curiosity about how computers work, and it quickly evolved into a deep-seated love for coding.</p>
     </div>
-    {% endfor %}
+  </div>
+
+  <div class="text-center">
+    <a class="glow-on-hover" href="/aboutme">More About Me</a>
   </div>
 </div>
+
+<div class="diagonal-box-projects">
+  <h2 class="heading">Projects</h2>
+  <div class="container-fluid px-4">
+    <div class="row">
+      {% for service in services['projects'] %}
+      <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
+        style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
+        <h4>{{service['title']}}</h4>
+        <p>{{service['about']}}</p>
+        <div class="text-center">
+          <a class="glow-on-hover" href="{{service['link']}}">Know More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
-
+<div class="diagonal-box-freelancing">
+  <h2 class=" heading">Freelancing</h2>
+  <div class="container-fluid px-4">
+    <div class="row">
+      {% for service in services['freelancing'] %}
+      <div class="col-sm-11 col-md-5 col-lg-5 col-xl-3 imgbg"
+        style="background-image: url({{url_for('static', filename='images/'+service['bg'])}});">
+        <h4>{{service['title']}}</h4>
+        <p>{{service['about']}}</p>
+        <div class="text-center">
+          <a class="glow-on-hover" href="{{service['link']}}">Know More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <div class="container-fluid blogpd">
-  <h1>Blogs</h1>
   <div class="row mx-3 imgbg " style="background-image: url({{url_for('static', filename='images/blogbg.jpg')}});">
 
     <div class="col-sm-11 col-md-11 col-lg-11 col-xl-5">

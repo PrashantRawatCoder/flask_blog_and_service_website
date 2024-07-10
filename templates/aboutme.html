@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block contactactive %}active{% endblock %}
 {% block style %}
+
 <style>
     body {
         background-image: url("{{url_for('static',filename='images/aboutme_background.jpg')}}");
@@ -14,19 +15,21 @@
     .mainpage {
         min-height: 100vh;
         margin: 0;
-        padding: 5px;
+        padding: 0;
 
         justify-content: center;
         align-items: center;
         color: #FFF;
     }
 
+
     .heading {
-        display: inline;
-        
-        margin: 20px;
-        background-color: rgba(0, 0, 0, 0.541);
-        width: 40%;
+        text-align: center;
+        background-image: linear-gradient(to right, rgba(135, 207, 235, 0.498), rgba(0, 0, 255, 0.514), rgba(255, 0, 230, 0.502), rgba(128, 0, 128, 0.504));
+        font-family: "Great Vibes", cursive !important;
+        font-weight: 200;
+        font-size: 50px;
+        font-style: normal;
     }
 
     .skill-container {
@@ -35,7 +38,7 @@
         margin-left: auto;
         margin-right: auto;
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(44%, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
         grid-template-rows: auto;
         grid-gap: 0 40px;
     }
@@ -171,34 +174,90 @@
         font-size: 16px;*/
     }
 
-    .box .content a {
+    .box .content .skillbar {
         position: relative;
         margin: 20px 0 0 0;
-        padding: 10px 20px;
-        text-decoration: none;
-        border: 1px solid #fff;
+        padding: 3px;
+        height: 37px;
         color: #FFF;
-        /*color:#333;*/
-        display: inline-block;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        background-color: #e5e5e5;
+        border-radius: 15px;
+        font-size: 14px;
+        content: attr(data-skill);
         transition: 0.5s;
         visibility: hidden;
         transform: translateY(10px);
         opacity: 0;
     }
 
-    .box:hover .content a {
+    .box:hover .content .skillbar {
         visibility: visible;
         opacity: 1;
         transform: translateY(0px);
+
+        &::before {
+            content: attr(data-skill);
+            display: inline-block;
+            padding: 5px 0 5px 10px;
+            border-radius: inherit;
+            animation: load 2s 0s;
+            -webkit-animation: load 2s 0s;
+            -moz-animation: load 2s 0s;
+            -o-animation: load 2s 0s;
+        }
+
+        &.learning::before {
+            width: calc(20% - 14px);
+            background: #9ac4e9;
+        }
+
+        &.basic::before {
+            width: calc(40% - 14px);
+            background: #71A8D9;
+        }
+
+        &.intermediate::before {
+            width: calc(60% - 14px);
+            background: #3981BF;
+        }
+
+        &.advanced::before {
+            width: calc(80% - 14px);
+            background: #175a93;
+        }
+
+        &.expert::before {
+            width: calc(100% - 14px);
+            background: #163A59;
+        }
     }
 
-    .box .content a:hover {
-        background: rgba(255, 255, 255, 0.95);
-        color: #222;
-        /*
-  color:#DEDEDE;
-  background:rgba(0,0,0,0.75);
-  */
+
+
+    @keyframes load {
+        from {
+            width: 0%
+        }
+    }
+
+    @-webkit-keyframes load {
+        from {
+            width: 0%
+        }
+    }
+
+    @-moz-keyframes load {
+        from {
+            width: 0%
+        }
+    }
+
+    @-o-keyframes load {
+        from {
+            width: 0%
+        }
     }
 
 
@@ -441,7 +500,7 @@
             <h1>FOOL</h1>
         </div>
     </div>
-    <h1 class="heading">SKILLS</h1>
+    <h1 class="heading">My Skills</h1>
     <div class="skill-container">
         <div class="box">
             <div class="content">
@@ -451,7 +510,8 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
                     assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
                     quibusdam nisi!</p>
-                <a href="#">Read more...</a>
+                <div class="skillbar advanced" data-skill="Python"></div>
+
             </div>
         </div>
 
@@ -460,10 +520,12 @@
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/cpplogo.png')}}" alt="logo">
                 <h3>Service Two</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
+                    eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
+                    sint
                     quibusdam nisi!</p>
-                <a href="#">Read more...</a>
+                <div class="skillbar basic" data-skill="C"></div>
             </div>
         </div>
 
@@ -472,10 +534,12 @@
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/clogo.png')}}" alt="logo">
                 <h3>Service Three</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
+                    eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
+                    sint
                     quibusdam nisi!</p>
-                <a href="#">Read more...</a>
+                <div class="skillbar intermediate" data-skill="C++"></div>
             </div>
         </div>
 
@@ -484,35 +548,40 @@
                 <div class="tape"></div>
                 <img class="pop-img" src="{{url_for('static', filename='images/flasklogo.png')}}" alt="logo">
                 <h3>Service Four</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
-                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet
+                    eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo
+                    sint
                     quibusdam nisi!</p>
-                <a href="#">Read more...</a>
+                <div class="skillbar advanced" data-skill="Flask"></div>
             </div>
         </div>
 
     </div>
 
     <div class="timeline">
-        <h1 class="heading">MY JOURNEY</h1>
+        <h1 class="heading">My Journey</h1>
         <ul>
             <li style="--accent-color:#41516C">
                 <div class="date">2002</div>
                 <div class="title">Title 1</div>
-                <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam
+                <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic
+                    quibusdam
                     fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
             </li>
             <li style="--accent-color:#FBCA3E">
                 <div class="date">2007</div>
                 <div class="title">Title 2</div>
-                <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis nostrum
+                <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis
+                    nostrum
                     vero nihil veniam.</div>
             </li>
             <li style="--accent-color:#E24A68">
                 <div class="date">2012</div>
                 <div class="title">Title 3</div>
                 <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur
-                    soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit, sequi
+                    soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit,
+                    sequi
                     quo, et dolorum saepe nulla hic.</div>
             </li>
             <li style="--accent-color:#1B5F8C">
