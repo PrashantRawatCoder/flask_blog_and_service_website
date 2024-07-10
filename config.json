@@ -21,11 +21,7 @@
             "artificialintelligence"
         ],
         "allprojects": [
-            "webdevelopment",
-            "coding",
-            "hacking",
-            "artificialintelligence",
-            "acadmics"
+            "personal website"
         ],
         "freelancing": [
             {
@@ -59,11 +55,11 @@
         ],
         "projects": [
             {
-                "title": "Learn Web Development",
-                "about": "sd df jd gf jgvhfg hfgfgh fjdg fjhds fuhg vfhg fguih fughv fugh hufg ugh fug huhgds  fuhd siuhah fughs dugh",
+                "title": "Personal Website",
+                "about": "Of Course , I am talking about this website. It's amazing , isn't it ? Try visiting AboutMe page or just think about blog uploading system and conatct service intregrated in this website.",
                 "link": "/projects/webdevelopment",
                 "bg": "bg.jpg",
-                "description": "Lorem ipsum jls f id os asdfjoi sdfji dsis io ds . Hiuajdsfj fsjd fK .HJFH gfb fd? jdnjv fvnfjv fmv .v fj .BUbjfghfd gf by hf bfbvfdbvyshopqpqhfuidl  ."
+                "description": "<h4>Features of my website </h4><u><li>Blog Posting system.</li></u>"
             },
             {
                 "title": "Learn Coding",

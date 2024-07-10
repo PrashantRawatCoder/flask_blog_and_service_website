@@ -2,144 +2,530 @@
 {% block contactactive %}active{% endblock %}
 {% block style %}
 <style>
-  @media screen and (max-width: 900px) {
-
-
-    .home-about-1 {
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
+    body {
+        background-image: url("{{url_for('static',filename='images/aboutme_background.jpg')}}");
+        min-height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
-    .home-about-2 {
-      float: left;
-      clear: left;
-      color: white;
+
+    .mainpage {
+        min-height: 100vh;
+        margin: 0;
+        padding: 5px;
+
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+    }
+
+    .heading {
+        display: inline;
+        
+        margin: 20px;
+        background-color: rgba(0, 0, 0, 0.541);
+        width: 40%;
+    }
+
+    .skill-container {
+        position: relative;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(44%, 1fr));
+        grid-template-rows: auto;
+        grid-gap: 0 40px;
+    }
+
+    .skill-container .box {
+        position: relative;
+        height: auto;
+        min-width: 250px;
+        padding: 0px;
+        margin: 5px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000;
+        /*overflow:hidden;*/
+    }
+
+    .box .content {
+        position: relative;
+        padding: 25px 15px;
+        background: #000000c0;
+        color: #FFF;
+        /*
+  background: #DEDEDE;
+  colot:#000;
+  */
+
+    }
+
+    .skill-container .box:before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        bottom: -2px;
+        right: -2px;
+        /*background:rgba(255,255,255,1);*/
+        background: #FFF;
+        transform: skew(2deg, 2deg);
+        z-index: -1;
+    }
+
+    .skill-container .box:nth-child(1):before {
+        background: yellow;
+        background: linear-gradient(315deg, #ff0057, #e64a19)
+    }
+
+    .skill-container .box:nth-child(2):before {
+        background: red;
+        background: linear-gradient(315deg, #59A600, #008A9C)
+    }
+
+    .skill-container .box:nth-child(2):hover:before {
+        background: linear-gradient(315deg, #89ff00, #00E2FF)
+    }
+
+    .skill-container .box:nth-child(3):before {
+        background: lime;
+        background: linear-gradient(315deg, #e91e63, #5d02ff)
+    }
+
+    .skill-container .box:nth-child(4):before {
+        background: blue;
+        background: linear-gradient(315deg, #ff0000, #ffc107)
+    }
+
+
+    /*.skill-container .box:after{*/
+    .skill-container .tape {
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 0, 0.0);
+    }
+
+    .skill-container .tape:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        margin-left: 25%;
+        background: rgba(255, 255, 255, 0.03);
+        background: rgba(0, 0, 0, 0.1);
+        pointer-events: none;
+        transform: skew(41deg);
+        overflow: hidden;
+        transition: 0.25s;
+        /* 0.5 0.75*/
+    }
+
+    .box:hover .tape:after {
+        width: 100%;
+        margin-left: 0%;
+        transform: skew(0deg);
+        /*180 0 360 -180 +135 -135*/
+
+    }
+
+    .box .content .pop-img {
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        margin: 0;
+        padding: 0;
+        width: 90px;
+        height: 90px;
+        transition: 0.25s;
+    }
+
+    .box:hover .content .pop-img {
+        top: -50px;
+    }
+
+    .box .content h3 {
+        margin: 0 0 10px;
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .box .content p {
+        margin: 0;
+        padding: 0;
+        color: #DEDEDE;
+        /*color:#333;
+        font-size: 16px;*/
+    }
+
+    .box .content a {
+        position: relative;
+        margin: 20px 0 0 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: 1px solid #fff;
+        color: #FFF;
+        /*color:#333;*/
+        display: inline-block;
+        transition: 0.5s;
+        visibility: hidden;
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    .box:hover .content a {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    .box .content a:hover {
+        background: rgba(255, 255, 255, 0.95);
+        color: #222;
+        /*
+  color:#DEDEDE;
+  background:rgba(0,0,0,0.75);
+  */
+    }
+
+
+
+
+    .gradient-box {
+        position: relative;
+        margin: 30px auto 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        width: 98%;
+        background: linear-gradient(0deg, #000, #272727);
+    }
+
+    .gradient-box:before,
+    .gradient-box:after {
+        content: '';
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094,
+                #0000ff, #00ff00, #ffff00, #ff0000);
+        background-size: 400%;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        z-index: -1;
+        animation: steam 20s linear infinite;
+    }
+
+    @keyframes steam {
+        0% {
+            background-position: 0 0;
+        }
+
+        50% {
+            background-position: 400% 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    .gradient-box:after {
+        filter: blur(50px);
     }
 
     .home-img-logo {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 50%;
-      height: 150px;
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      background: linear-gradient(red, rgb(255, 17, 156), blue) padding-box, linear-gradient(to top, rgb(255, 0, 119), rgb(221, 0, 255), rgb(55, 0, 255), rgb(0, 162, 255)) border-box;
-    }
-  }
-
-  @media screen and (min-width: 901px) {
-    .imgbg {
-      position: relative;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 15px;
-      color: black;
-      background-size: cover;
+        float: left;
+        margin: 60px;
+        height: 190px;
+        width: 190px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        background: linear-gradient(red, rgb(255, 17, 156), blue) padding-box, linear-gradient(to top, rgb(255, 0, 119), rgb(221, 0, 255), rgb(55, 0, 255), rgb(0, 162, 255)) border-box;
     }
 
-    .home-about-1 {
-      float: left;
-      width: 25%;
+
+    .timeline ul {
+        --col-gap: 2rem;
+        --row-gap: 2rem;
+        --line-w: 0.25rem;
+        display: grid;
+        grid-template-columns: var(--line-w) 1fr;
+        grid-auto-columns: max-content;
+        column-gap: var(--col-gap);
+        list-style: none;
+        width: min(60rem, 90%);
+        margin-inline: auto;
     }
 
-    .home-about-2 {
-      float: right;
-      color: white;
-      width: 75%;
+    /* line */
+    .timeline ul::before {
+        content: "";
+        grid-column: 1;
+        grid-row: 1 / span 20;
+        background: rgb(225, 225, 225);
+        border-radius: calc(var(--line-w) / 2);
     }
 
-    .home-img-logo {
-      height: 150px;
-      width: 150px;
-      border-radius: 50%;
-      border: 3px solid transparent;
-      background: linear-gradient(red, rgb(255, 17, 156), blue) padding-box, linear-gradient(to top, rgb(255, 0, 119), rgb(221, 0, 255), rgb(55, 0, 255), rgb(0, 162, 255)) border-box;
-    }
-  }
+    /* columns*/
 
-  .mainpage {
-    width: 100%;
-    padding: 2%;
-    display: block;
-  }
+    /* row gaps */
+    .timeline ul li:not(:last-child) {
+        margin-bottom: var(--row-gap);
+    }
+
+    /* card */
+    .timeline ul li {
+        grid-column: 2;
+        --inlineP: 1.5rem;
+        margin-inline: var(--inlineP);
+        grid-row: span 2;
+        display: grid;
+        grid-template-rows: min-content min-content min-content;
+    }
+
+    /* date */
+    .timeline ul li .date {
+        --dateH: 3rem;
+        height: var(--dateH);
+        margin-inline: calc(var(--inlineP) * -1);
+
+        text-align: center;
+        background-color: var(--accent-color);
+
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 700;
+
+        display: grid;
+        place-content: center;
+        position: relative;
+
+        border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+    }
+
+    /* date flap */
+    .timeline ul li .date::before {
+        content: "";
+        width: var(--inlineP);
+        aspect-ratio: 1;
+        background: var(--accent-color);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.53) 100%, transparent);
+        position: absolute;
+        top: 100%;
+
+        clip-path: polygon(0 0, 100% 0, 0 100%);
+        right: 0;
+    }
+
+    /* circle */
+    .timeline ul li .date::after {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        aspect-ratio: 1;
+        background: var(--bgColor);
+        border: 0.3rem solid var(--accent-color);
+        border-radius: 50%;
+        top: 50%;
+
+        transform: translate(50%, -50%);
+        right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+    }
+
+    /* title descr */
+    .timeline ul li .title,
+    .timeline ul li .descr {
+        background: rgba(0, 0, 0, 0.385);
+        position: relative;
+        padding-inline: 1.5rem;
+    }
+
+    .timeline ul li .title {
+        overflow: hidden;
+        padding-block-start: 1.5rem;
+        padding-block-end: 1rem;
+        font-weight: 500;
+    }
+
+    .timeline ul li .descr {
+        padding-block-end: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* shadows */
+    .timeline ul li .title::before,
+    .timeline ul li .descr::before {
+        content: "";
+        position: absolute;
+        width: 90%;
+        height: 0.5rem;
+        background: rgb(0, 0, 0);
+        left: 50%;
+        border-radius: 50%;
+        filter: blur(4px);
+        transform: translate(-50%, 50%);
+    }
+
+    .timeline ul li .title::before {
+        bottom: calc(100% + 0.125rem);
+    }
+
+    .timeline ul li .descr::before {
+        z-index: -1;
+        bottom: 0.25rem;
+    }
+
+    @media (min-width: 40rem) {
+        .timeline ul {
+            grid-template-columns: 1fr var(--line-w) 1fr;
+        }
+
+        .timeline ul::before {
+            grid-column: 2;
+        }
+
+        .timeline ul li:nth-child(odd) {
+            grid-column: 1;
+        }
+
+        .timeline ul li:nth-child(even) {
+            grid-column: 3;
+        }
+
+        /* start second card */
+        .timeline ul li:nth-child(2) {
+            grid-row: 2/4;
+        }
+
+        .timeline ul li:nth-child(odd) .date::before {
+            clip-path: polygon(0 0, 100% 0, 100% 100%);
+            left: 0;
+        }
+
+        .timeline ul li:nth-child(odd) .date::after {
+            transform: translate(-50%, -50%);
+            left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+        }
+
+        .timeline ul li:nth-child(odd) .date {
+            border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+        }
+    }
 </style>
 {% endblock %}
 {% block body %}
-
-<div class="p-2" id="home-about">
-  <div class="home-about-1">
-    <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
-  </div>
-  <div class="home-about-2 p-3">
-    <p>Hello! I'm a dedicated and passionate 15-year-old programmer from Haryana, India. Currently, I am a 10th-grade
-      student, and I have been captivated by the world of programming since I was 11. My journey began with a simple
-      curiosity about how computers work, and it quickly evolved into a deep-seated love for coding.
-
-      I am proficient in Python, C++, and C, and I have the ability to immerse myself in programming for up to 12 hours
-      a day. My enthusiasm for learning and improving my skills is boundless, and I am constantly seeking new challenges
-      and opportunities to grow.
-
-      I am always open to suggestions, mentorship, or collaborative opportunities to enhance my learning experience. If
-      you have any advice or would like to connect, please feel free to reach out. Let's connect and create something
-      amazing together!</p>
-  </div>
-</div>
 <div class="mainpage">
-  <p class="mx-2">Hope you like my website !</p>
-  <h2>My Past</h2>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit
-    autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil
-    nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio
-    excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi
-    necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident
-    quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi,
-    magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis
-    inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt
-    sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis,
-    eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam
-    similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem!
-    Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a,
-    quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis
-    porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
-  <br>
-  <h2>Experiance</h2>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit
-    autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil
-    nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio
-    excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi
-    necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident
-    quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi,
-    magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis
-    inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt
-    sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis,
-    eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam
-    similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem!
-    Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a,
-    quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis
-    porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
-  <br>
-  <h2>What will I do in future ?</h2>
-  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem similique sint, quibusdam quo quam cupiditate sit
-    autem deserunt sapiente commodi itaque? Iure iste distinctio vitae veritatis eaque reiciendis sed cumque nihil
-    nostrum, neque enim accusantium rem dicta aperiam! Facere voluptate magni hic molestias quod labore harum distinctio
-    excepturi nulla. Vero doloremque id distinctio repellendus, numquam totam omnis magni dignissimos animi
-    necessitatibus, inventore, voluptatibus quibusdam veniam? Quisquam, illo tenetur quasi, dolor deleniti provident
-    quibusdam nostrum a molestias non possimus voluptatibus tempora odit quos exercitationem accusantium excepturi,
-    magni eum nam? Laboriosam, labore minima voluptates, aliquid quas, maiores ducimus magni veniam ea debitis
-    inventore? Sunt harum sit cum quas voluptates? Culpa, temporibus harum. Voluptas autem deserunt ducimus totam sunt
-    sapiente, officia quibusdam temporibus iusto rerum commodi quia vero voluptatem similique eligendi reiciendis,
-    eveniet nisi aliquam accusamus earum aliquid eum aperiam in! Hic, autem optio. Enim doloremque sit laboriosam
-    similique, odit ut quis obcaecati possimus eius illum animi ab architecto provident veniam vitae illo, est quidem!
-    Dolorum illum porro hic exercitationem harum praesentium similique aliquid. Perspiciatis cupiditate veniam a,
-    quisquam delectus alias, earum amet nemo molestias, itaque excepturi nihil quo? Beatae, quasi eos tempore nobis
-    porro enim fugit dignissimos delectus sequi iste libero quaerat.</p>
 
+    <div class="gradient-box">
+        <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
+        <div class="content">
+            <h1>Hlo boyssss!</h1>
+            <p>Krishan Rawat is best coder! VVIP Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique,
+                consequuntur. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae exercitationem velit
+                cumque blanditiis adipisci obcaecati, facere deleniti unde quibusdam quidem saepe alias ab tempore quia
+                a possimus, sed quis autem magnam, nobis itaque. Expedita, aliquid nesciunt nihil explicabo repudiandae
+                voluptatibus repellat dolor minima natus eveniet assumenda, commodi rem. Deserunt, unde?</p>
+            <h1>FOOL</h1>
+        </div>
+    </div>
+    <h1 class="heading">SKILLS</h1>
+    <div class="skill-container">
+        <div class="box">
+            <div class="content">
+                <div class="tape"></div>
+                <img class="pop-img" src="{{url_for('static', filename='images/pythonlogo.png')}}" alt="logo">
+                <h3>Service One</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                    quibusdam nisi!</p>
+                <a href="#">Read more...</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <div class="tape"></div>
+                <img class="pop-img" src="{{url_for('static', filename='images/cpplogo.png')}}" alt="logo">
+                <h3>Service Two</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                    quibusdam nisi!</p>
+                <a href="#">Read more...</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <div class="tape"></div>
+                <img class="pop-img" src="{{url_for('static', filename='images/clogo.png')}}" alt="logo">
+                <h3>Service Three</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                    quibusdam nisi!</p>
+                <a href="#">Read more...</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="content">
+                <div class="tape"></div>
+                <img class="pop-img" src="{{url_for('static', filename='images/flasklogo.png')}}" alt="logo">
+                <h3>Service Four</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat neque nesciunt possimus eveniet eius
+                    assumenda ipsa modi distinctio, sunt earum voluptatem inventore in vel odio adipisci explicabo sint
+                    quibusdam nisi!</p>
+                <a href="#">Read more...</a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="timeline">
+        <h1 class="heading">MY JOURNEY</h1>
+        <ul>
+            <li style="--accent-color:#41516C">
+                <div class="date">2002</div>
+                <div class="title">Title 1</div>
+                <div class="descr">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas itaque hic quibusdam
+                    fugiat est numquam harum, accusamus suscipit consequatur laboriosam!</div>
+            </li>
+            <li style="--accent-color:#FBCA3E">
+                <div class="date">2007</div>
+                <div class="title">Title 2</div>
+                <div class="descr">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos adipisci nobis nostrum
+                    vero nihil veniam.</div>
+            </li>
+            <li style="--accent-color:#E24A68">
+                <div class="date">2012</div>
+                <div class="title">Title 3</div>
+                <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga minima consequuntur
+                    soluta placeat iure totam commodi repellendus ea delectus, libero fugit quod reprehenderit, sequi
+                    quo, et dolorum saepe nulla hic.</div>
+            </li>
+            <li style="--accent-color:#1B5F8C">
+                <div class="date">2017</div>
+                <div class="title">Title 4</div>
+                <div class="descr">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, cumque.</div>
+            </li>
+            <li style="--accent-color:#4CADAD">
+                <div class="date">2022</div>
+                <div class="title">Title 5</div>
+                <div class="descr">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit, non.</div>
+            </li>
+        </ul>
+    </div>
 </div>
 {% endblock %}
