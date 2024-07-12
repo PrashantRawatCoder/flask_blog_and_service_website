@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, flash
+from flask import Flask, render_template, request, redirect, session, flash, url_for
 from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
@@ -417,7 +417,12 @@ def deleteblog(blogid):
     ):
         db.session.delete(Blogs.query.get(blogid))
         db.session.commit()
-        flash("Blog no (" + blogid + ") Deleted Sussessfully !\nPlease remove it's url from sitemap manually !", "success")
+        flash(
+            "Blog no ("
+            + blogid
+            + ") Deleted Sussessfully !\nPlease remove it's url from sitemap manually !",
+            "success",
+        )
         return redirect("/editblogs")
     else:
         flash("Only admin can access that page !", "error")

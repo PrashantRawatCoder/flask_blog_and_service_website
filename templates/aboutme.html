@@ -1,10 +1,10 @@
 {% extends "layout.html" %}
-{% block contactactive %}active{% endblock %}
+{% block title %}PrashantRawatCoder - About Prashant Rawat Coder {% endblock %}
 {% block style %}
 
 <style>
     body {
-        background-image: url("{{url_for('static',filename='images/aboutme-background.jpeg')}}");
+        background-image: url("{{url_for('static',filename='images/aboutme-background.jpg')}}");
         min-height: 100vh;
         background-position: center;
         background-repeat: repeat-y;
@@ -487,14 +487,14 @@
 {% endblock %}
 {% block body %}
 <div class="mainpage">
-
     <div class="gradient-box">
         <img class="home-img-logo" src="{{url_for('static', filename='images/prashantrawat_selfi.jpg')}}" alt="logo">
         <div class="content m-1">
-            <h1 style="margin-left: 10px;">Prashant Rawat</h1>
+            <h1 style="margin-left: 10px;">PrashantRawatCoder</h1>
+            <h4 style="margin-left: 10px;">Prashant Rawat</h4>
             <h4 style="margin-left: 10px;">{{age_time}} &#128518;</h4>
             <h4 style="margin-left: 10px;">Male</h4>
-            <h4 style="margin-left: 10px;">📌 From Palwal,Haryana,India 🇮🇳</h4>
+            <h4 style="margin-left: 10px;">From Palwal,Haryana,India</h4>
             <h5 style="margin: 100px 20px 10px 20px;">
                 Hello! I'm a dedicated and passionate 15-year-old programmer from Haryana, India. Currently, I am a
                 10th-grade
