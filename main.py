@@ -422,6 +422,9 @@ def editcontact(id):
         flash("Only admin can access that page !", "error")
         return redirect("/")
 
+@app.route("/sitemap")
+def sitemap():
+    return render_template("sitemap.xml")
 
 if __name__ == "__main__":
     app.run(debug=True)
