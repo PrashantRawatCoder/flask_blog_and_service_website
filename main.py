@@ -8,21 +8,52 @@ import json
 import re
 import os
 
+# loading configurations
 with open("config.json", "r") as configfile:
     config = json.load(configfile)
     parameters = config["parameters"]
     services = config["services"]
 
 
+# Add a new url to sitemap , takes whole url as input (example : add_sitemap("abc.example.com/blogs/new-blog"))
+def add_sitemap(site_url):
+    with open("templates/sitemap.xml", "r") as sitemap_file:
+        initial_sitemap = sitemap_file.read()
+    with open("templates/sitemap.xml", "w") as sitemap_file:
+        new_site_url = f"<url>\n<loc>http://{site_url}</loc>\n<lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>\n</url>\n\n<url>\n<loc>https://{site_url}</loc>\n<lastmod>{datetime.now().strftime('%Y-%m-%d')}</lastmod>\n</url>\n"
+        sitemap_file.write(
+            f"{initial_sitemap.split('</urlset>')[0]}\n{new_site_url}\n</urlset>\n"
+        )
+
+
+# initial configuration of sitemap
+def sitemap_init():
+    with open("templates/sitemap.xml", "w") as sitemap_file:
+        date = datetime.now().strftime("%Y-%m-%d")
+        sitemap_file.write(
+            f"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/signin</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/login</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/blogs</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/contact</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>http://{parameters['WEBSITE_ADDR']}/aboutme</loc>\n  <lastmod>{date}</lastmod>\n</url>         \n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/signin</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/login</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/blogs</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/contact</loc>\n  <lastmod>{date}</lastmod>\n</url>\n<url>\n  <loc>https://{parameters['WEBSITE_ADDR']}/aboutme</loc>\n  <lastmod>{date}</lastmod>\n</url>\n</urlset>"
+        )
+
+    # adding services and projects to sitemap
+    for freelancing in services["allfreelancing"]:
+        add_sitemap(f'{parameters["WEBSITE_ADDR"]}/freelencing/{freelancing}')
+
+    for projects in services["allprojects"]:
+        add_sitemap(f'{parameters["WEBSITE_ADDR"]}/projects/{projects}')
+
+
+# configuring flask
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = parameters["server_uri"]
-app.config["SECRET_KEY"] = "123123"
+app.config["SECRET_KEY"] = "#$234fsgj@!#4ldjas"
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 app.config["UPLOAD_FOLDER"] = parameters["UPLOAD_FOLDER"]
 app.config["MEDIA_UPLOAD_FOLDER"] = parameters["MEDIA_UPLOAD_FOLDER"]
+sitemap_init()
 
 
+# database classes
 class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.VARCHAR(20), nullable=False, unique=True)
@@ -279,6 +310,7 @@ def editblogs():
                 ):
                     filename = secure_filename(html_file.filename)
                     html_file.save(os.path.join(app.config["UPLOAD_FOLDER"], filename))
+
                 else:
                     flash("Please Enter Correct File Extention and Name !", "error")
 
@@ -341,13 +373,16 @@ def createblog(blogid):
                 flash("Slug Must contain only lowercase letters and '-' !", "error")
             elif not (("." in filename) and filename.split(".")[1].lower() == "html"):
                 flash("File Extention must be HTML !", "error")
-            elif not os.path.isfile(parameters["UPLOAD_FOLDER"] + filename):
+            elif not os.path.isfile(
+                os.path.join(app.config["UPLOAD_FOLDER"], filename)
+            ):
                 flash("HTML file doesn't exists ! Plrease Upload the file !", "error")
             elif blogid == "0":
                 blog = Blogs(title=title, slug=slug, filename=filename)
                 db.session.add(blog)
                 db.session.commit()
-                flash("New Blog Created Sussessfully ! ", "success")
+                add_sitemap(f"{parameters['WEBSITE_ADDR']}/{slug}")
+                flash("New Blog Created Sussessfully !", "success")
                 return redirect("/editblogs")
             else:
                 blog = Blogs.query.get(blogid)
@@ -355,7 +390,12 @@ def createblog(blogid):
                 blog.slug = slug
                 blog.filename = filename
                 db.session.commit()
-                flash("Blog no (" + blogid + ") Edited Sussessfully ! ", "success")
+                flash(
+                    "Blog no ("
+                    + blogid
+                    + ") Edited Sussessfully ! \nPlease update blog url in sitemap file manually !",
+                    "success",
+                )
                 return redirect("/editblogs")
         blog = Blogs.query.get(blogid)
         if blogid == "0":
@@ -377,7 +417,7 @@ def deleteblog(blogid):
     ):
         db.session.delete(Blogs.query.get(blogid))
         db.session.commit()
-        flash("Blog no (" + blogid + ") Deleted Sussessfully ! ", "success")
+        flash("Blog no (" + blogid + ") Deleted Sussessfully !\nPlease remove it's url from sitemap manually !", "success")
         return redirect("/editblogs")
     else:
         flash("Only admin can access that page !", "error")
@@ -422,9 +462,11 @@ def editcontact(id):
         flash("Only admin can access that page !", "error")
         return redirect("/")
 
+
 @app.route("/sitemap")
 def sitemap():
     return render_template("sitemap.xml")
+
 
 if __name__ == "__main__":
     app.run(debug=True)

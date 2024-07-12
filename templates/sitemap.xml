@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>http://prashantrawatcoder.pythonanywhere.com/</loc>
   <lastmod>2024-07-12</lastmod>
@@ -23,25 +23,84 @@
 <url>
   <loc>http://prashantrawatcoder.pythonanywhere.com/aboutme</loc>
   <lastmod>2024-07-12</lastmod>
-</url>
+</url>         
 <url>
-  <loc>http://prashantrawatcoder.pythonanywhere.com/freelancing/webdevelopment</loc>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/</loc>
   <lastmod>2024-07-12</lastmod>
 </url>
 <url>
-  <loc>http://prashantrawatcoder.pythonanywhere.com/freelancing/artificialintelligence</loc>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/signin</loc>
   <lastmod>2024-07-12</lastmod>
 </url>
 <url>
-  <loc>http://prashantrawatcoder.pythonanywhere.com/freelancing/coding</loc>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/login</loc>
   <lastmod>2024-07-12</lastmod>
 </url>
 <url>
-  <loc>http://prashantrawatcoder.pythonanywhere.com/projects/personalwebsite</loc>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/blogs</loc>
   <lastmod>2024-07-12</lastmod>
 </url>
 <url>
-  <loc>http://prashantrawatcoder.pythonanywhere.com/freelancing/webscraping</loc>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/contact</loc>
   <lastmod>2024-07-12</lastmod>
 </url>
+<url>
+  <loc>https://prashantrawatcoder.pythonanywhere.com/aboutme</loc>
+  <lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>http://prashantrawatcoder.pythonanywhere.com/freelencing/webdevelopment</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>https://prashantrawatcoder.pythonanywhere.com/freelencing/webdevelopment</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+
+<url>
+<loc>http://prashantrawatcoder.pythonanywhere.com/freelencing/coding</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>https://prashantrawatcoder.pythonanywhere.com/freelencing/coding</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+
+<url>
+<loc>http://prashantrawatcoder.pythonanywhere.com/freelencing/webscraping</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>https://prashantrawatcoder.pythonanywhere.com/freelencing/webscraping</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+
+<url>
+<loc>http://prashantrawatcoder.pythonanywhere.com/freelencing/artificialintelligence</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>https://prashantrawatcoder.pythonanywhere.com/freelencing/artificialintelligence</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+
+<url>
+<loc>http://prashantrawatcoder.pythonanywhere.com/projects/personalwebsite</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
+<url>
+<loc>https://prashantrawatcoder.pythonanywhere.com/projects/personalwebsite</loc>
+<lastmod>2024-07-12</lastmod>
+</url>
+
 </urlset>

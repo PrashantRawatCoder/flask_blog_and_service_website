@@ -2,8 +2,9 @@
     "parameters": {
         "server_uri": "mysql+pymysql://root:1234@127.0.0.1:3306/PRCdb",
         "adminname": "prashant",
-        "UPLOAD_FOLDER": "/sdcard/1coding/website/myweb/templates/blogs/",
-        "MEDIA_UPLOAD_FOLDER": "/sdcard/1coding/website/myweb/static/images/uploded/",
+        "WEBSITE_ADDR": "prashantrawatcoder.pythonanywhere.com",
+        "UPLOAD_FOLDER": "/data/data/com.termux/files/home/Coding/Flask-Projects/flask_blog_and_service_website/templates/blogs",
+        "MEDIA_UPLOAD_FOLDER": "",
         "ALLOWED_EXTENSIONS": [
             "html"
         ],
